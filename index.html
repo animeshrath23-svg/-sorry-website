@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Little Sorry 💗</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(135deg,#fff5f7,#f8dce7,#fff0e8);color:#694653;font-family:Georgia,serif;text-align:center}
+.page{display:none;min-height:100vh;padding:35px 22px;align-items:center;justify-content:center;flex-direction:column;animation:fade .6s}
+.page.active{display:flex}
+h1{font-size:clamp(38px,9vw,62px);margin:15px 0}
+h2{font-size:clamp(27px,7vw,40px)}
+p{font:16px/1.8 Arial,sans-serif;color:#866a76;max-width:490px}
+.bear{font-size:100px;animation:float 2.5s infinite}
+.card{background:#ffffffb8;border:1px solid #f0ccd9;border-radius:22px;padding:22px;max-width:500px;width:100%;box-shadow:0 12px 40px #b76c871b}
+button{border:0;border-radius:30px;background:#d77f9d;color:white;padding:14px 22px;font-size:15px;margin:8px;cursor:pointer;box-shadow:0 5px 15px #d77f9d44}
+button.light{background:white;color:#b26080;border:1px solid #edc4d2}
+.memories{display:flex;gap:10px;margin:20px 0;width:100%;max-width:500px}
+.memory{flex:1;background:#fff;padding:8px 5px;border-radius:12px;box-shadow:0 5px 16px #9c6b7b20}
+.photo{height:110px;display:grid;place-items:center;background:linear-gradient(145deg,#f1c6d5,#f9e6dc);font-size:38px;border-radius:8px}
+.memory small{display:block;font:12px/1.5 Arial;padding:9px 2px}
+.clock{font-size:100px;animation:float 3s infinite}
+.heart{font-size:110px;animation:beat 1s infinite}
+#no{transition:transform .2s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes beat{50%{transform:scale(1.12)}}
+</style>
+</head>
+<body>
+
+<section class="page active">
+  <div class="bear">🧸💗</div>
+  <p>A LITTLE NOTE FROM MY HEART</p>
+  <h1>I'm really sorry.</h1>
+  <div class="card">
+    <p>I know I messed up, and I wish I could take that moment back.</p>
+    <p>I never wanted to hurt you. You mean so much to me. I'm truly sorry, from the bottom of my heart. 💗</p>
+  </div>
+  <button onclick="show(1)">Keep reading ♡</button>
+</section>
+
+<section class="page">
+  <p>THE LITTLE THINGS THAT MEAN EVERYTHING</p>
+  <h2>Remember these moments?</h2>
+  <p>All the little memories I keep close to my heart.</p>
+  <div class="memories">
+    <div class="memory"><div class="photo">🌷</div><small>Your smile made my day.</small></div>
+    <div class="memory"><div class="photo">☁️</div><small>Our silly moments.</small></div>
+    <div class="memory"><div class="photo">🌅</div><small>Time with you is special.</small></div>
+  </div>
+  <p>These are moments I never want to take for granted.</p>
+  <button onclick="show(2)">One more thing… ♡</button>
+</section>
+
+<section class="page">
+  <div class="clock">🕰️</div>
+  <p>IF ONLY I COULD TURN BACK TIME</p>
+  <h2>If I could go back…</h2>
+  <div class="card">
+    <p>I'd pause for a moment. I'd choose my words more carefully and listen with more patience.</p>
+    <p>I can't change what happened. I can only learn from it and do better from here on.</p>
+  </div>
+  <button onclick="show(3)">Can I ask you something? ♡</button>
+</section>
+
+<section class="page">
+  <div class="card">
+    <div style="font-size:30px">♡ ♡ ♡</div>
+    <h2>Can you forgive me? 🥺</h2>
+    <p>I can't ask you to forget what happened. I just hope you'll give me a chance to make things right.</p>
+    <button onclick="show(4)">Yes, I forgive you 💗</button>
+    <button class="light" id="no" onclick="notYet()">Not yet</button>
+  </div>
+</section>
+
+<section class="page">
+  <div class="heart">💗</div>
+  <p>YOU JUST MADE MY HEART SMILE</p>
+  <h1>YAY! ♡</h1>
+  <div class="card">
+    <p>Thank you for hearing me out. I'll show you how much you mean to me—not just with words, but with my actions.</p>
+    <p>Here's to kinder words, more understanding, and many more happy memories together. 🫶</p>
+  </div>
+  <button class="light" onclick="show(0)">Read it again ↺</button>
+  <p>Made with love, just for you ♡</p>
+</section>
+
+<script>
+const pages=document.querySelectorAll('.page');
+function show(n){
+  pages.forEach((p,i)=>p.classList.toggle('active',i===n));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function notYet(){
+  const b=document.getElementById('no');
+  b.textContent=['Are you sure? 🥺','Maybe later? 💗','One tiny chance?'][Math.floor(Math.random()*3)];
+  b.style.transform=`translate(${Math.random()*70-35}px,${Math.random()*30-15}px)`;
+}
+</script>
+</body>
+</html>
