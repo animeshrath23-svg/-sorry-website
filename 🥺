@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f5">
+<title>For Dhanu 💗</title>
+
+<style>
+:root {
+  --pink: #e986a8;
+  --deep: #b9567a;
+  --ink: #694456;
+  --cream: #fffaf7;
+  --soft: #ffe8ef;
+}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 15%, #fff 0 4%, transparent 25%),
+    linear-gradient(145deg, #fff5f7, #ffe5ed 55%, #fff2e8);
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100svh;
+  padding: 35px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  animation: appear .55s ease both;
+}
+.page.active { display: flex; }
+
+.wrap { width: 100%; max-width: 480px; }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--deep);
+  font-weight: bold;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(39px, 10vw, 58px);
+  line-height: 1.08;
+  margin: 15px 0;
+  color: #a94e73;
+}
+h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 7vw, 37px);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #866779;
+}
+.small { font-size: 13px; }
+
+.card {
+  width: 100%;
+  padding: 23px;
+  margin: 15px 0;
+  border: 1px solid #f5cbd9;
+  border-radius: 25px;
+  background: #ffffffb8;
+  box-shadow: 0 12px 35px #a9567712;
+}
+
+.bear {
+  font-size: 94px;
+  margin: 8px 0;
+  filter: drop-shadow(0 8px 8px #a9567720);
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+.sticker {
+  display: inline-block;
+  font-size: 32px;
+  margin: 5px;
+  animation: bob 2.7s ease-in-out infinite;
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 15px 23px;
+  margin: 7px 4px;
+  width: auto;
+  max-width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: inherit;
+  color: white;
+  background: linear-gradient(135deg, #ec91b0, #d76f96);
+  box-shadow: 0 7px 17px #d76f9633;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+button:active { transform: scale(.97); }
+button.secondary {
+  background: #fff;
+  color: var(--deep);
+  border: 1px solid #efc5d4;
+  box-shadow: none;
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.letter {
+  text-align: left;
+  font-family: Georgia, serif;
+  line-height: 1.9;
+  font-size: 17px;
+  color: #765266;
+}
+.letter p { font-family: inherit; font-size: inherit; }
+
+.pill {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #f4d1dd;
+  border-radius: 50px;
+  padding: 9px 14px;
+  font-size: 13px;
+  color: #a55376;
+  margin: 4px;
+}
+
+.heart {
+  font-size: 83px;
+  animation: heartbeat 1.2s infinite;
+}
+.footer { margin-top: 24px; font-size: 12px; opacity: .75; }
+
+#floating {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+.float-heart {
+  position: absolute;
+  bottom: -35px;
+  animation: rise 4s linear forwards;
+  opacity: .8;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(13px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bob {
+  50% { transform: translateY(-9px) rotate(2deg); }
+}
+@keyframes heartbeat {
+  50% { transform: scale(1.12); }
+}
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="floating" aria-hidden="true"></div>
+
+<!-- SCREEN 1 -->
+<section class="page active" id="p0">
+  <div class="wrap">
+    <div class="eyebrow">A TINY MESSAGE FOR MY FAVOURITE HUMAN</div>
+    <div class="bear">🧸💗</div>
+    <span class="pill">Special delivery for Dhanu</span>
+    <h1>Hey, Dhanu...</h1>
+    <p>I made you a little something.</p>
+    <div class="card">
+      <p>Before you call this faltu too... 😭</p>
+      <p class="small">Give me one tiny minute. No pressure, no lecture. Just me trying to say something properly.</p>
+    </div>
+    <button onclick="go(1)">Okay, let's see 🙄💗</button>
+    <div class="footer">Made with a little nervousness and a lot of care ♡</div>
+  </div>
+</section>
+
+<!-- SCREEN 2 -->
+<section class="page" id="p1">
+  <div class="wrap">
+    <div class="sticker">🥹 🩷 🧸</div>
+    <div class="eyebrow">THE PART WHERE I ADMIT IT</div>
+    <h2>Okay, I messed up.</h2>
+    <div class="card">
+      <p>I said you were a bit lethargic and that your stamina was a bit low.</p>
+      <p>I might have meant it as an observation, but I understand that the way I said it could have felt hurtful or like I was judging you.</p>
+      <p><strong>I'm sorry, Dhanu.</strong> I should have been more thoughtful with my words.</p>
+    </div>
+    <p class="small">Intentions matter, but so does how our words make someone feel.</p>
+    <button onclick="go(2)">There's something else I want to say ♡</button>
+  </div>
+</section>
+
+<!-- SCREEN 3 -->
+<section class="page" id="p2">
+  <div class="wrap">
+    <div class="bear">🐻‍❄️🌷</div>
+    <div class="eyebrow">NO EXCUSES, JUST A LITTLE HONESTY</div>
+    <h2>You deserved a kinder version of me.</h2>
+    <div class="card letter">
+      <p>Dhanu, I don't want you to feel like you have to be a certain way to be enough.</p>
+      <p>If I have a concern, I should talk to you kindly instead of making a comment that leaves you feeling bad.</p>
+      <p>I can't take those words back, but I can learn from this and be more careful next time.</p>
+      <p>I'm not asking you to instantly feel okay. I just wanted to own my part and say I'm genuinely sorry. 💗</p>
+    </div>
+    <button onclick="go(3)">One last little thing… 🫶</button>
+  </div>
+</section>
+
+<!-- SCREEN 4 -->
+<section class="page" id="p3">
+  <div class="wrap">
+    <div class="eyebrow">A SMALL PROMISE</div>
+    <div class="sticker">🌸 🧸 🌸</div>
+    <h2>I'll try to do better.</h2>
+    <div class="card">
+      <p>Less careless comments.</p>
+      <p>More kindness, more listening, and more thinking before I speak.</p>
+      <p>And if I get something wrong, I want to be able to hear you out instead of arguing about what I meant.</p>
+      <div class="pill">A little more patience</div>
+      <div class="pill">A little more understanding</div>
+      <div class="pill">A lot more thoughtfulness</div>
+    </div>
+    <button onclick="go(4)">For you, Dhanu 💗</button>
+  </div>
+</section>
+
+<!-- SCREEN 5 -->
+<section class="page" id="p4">
+  <div class="wrap">
+    <div class="heart">💗</div>
+    <div class="eyebrow">NO PRESSURE, DHANU</div>
+    <h1>I'm sorry.</h1>
+    <div class="card">
+      <p>You don't have to reply a certain way, and you don't have to forgive me immediately.</p>
+      <p>I just wanted you to know that I care about you, that I heard how my words might have landed, and that I'll try to do better.</p>
+      <p><strong>Take your time, okay? 🫶</strong></p>
+    </div>
+    <div class="buttons">
+      <button onclick="response('Thank you for reading this, Dhanu. Take all the time you need. 💗')">I read it ♡</button>
+      <button class="secondary" onclick="response('That is okay, Dhanu. I respect your feelings and your time. 💗')">I need time</button>
+    </div>
+    <p id="reply" aria-live="polite"></p>
+    <button class="secondary" onclick="go(0)">Read it again ↺</button>
+    <div class="footer">A little apology, made just for Dhanu ♡</div>
+  </div>
+</section>
+
+<script>
+function go(n) {
+  document.querySelectorAll('.page').forEach((page, i) => {
+    page.classList.toggle('active', i === n);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (n === 4) hearts();
+}
+
+function response(message) {
+  document.getElementById('reply').textContent = message;
+  hearts();
+}
+
+function hearts() {
+  const area = document.getElementById('floating');
+  const symbols = ['♡', '💗', '💕', '✨'];
+  for (let i = 0; i < 12; i++) {
+    const heart = document.createElement('span');
+    heart.className = 'float-heart';
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.fontSize = (16 + Math.random() * 18) + 'px';
+    heart.style.animationDelay = (Math.random() * 1.2) + 's';
+    area.appendChild(heart);
+    setTimeout(() => heart.remove(), 5500);
+  }
+}
+</script>
+</body>
+</html>
